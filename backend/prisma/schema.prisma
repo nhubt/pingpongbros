@@ -1,0 +1,116 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        Int      @id @default(autoincrement())
+  name      String
+  email     String   @unique
+  phone     String   @unique
+  password  String
+  role      Role
+  memberId  Int?
+  createdAt DateTime @default(now())
+  member    Member?  @relation(fields: [memberId], references: [id])
+}
+
+enum Role {
+  GUEST
+  MEMBER
+  TEACHER
+  STAFF
+  MANAGER
+}
+
+model Member {
+  id          Int      @id @default(autoincrement())
+  name        String
+  phone       String   @unique
+  email       String   @unique
+  packageType String
+  startDate   DateTime
+  endDate     DateTime
+  totalTurns  Int
+  usedTurns   Int
+  status      String   @default("active")
+  users       User[]
+  bookings    Booking[]
+}
+
+model Table {
+  id          Int      @id @default(autoincrement())
+  tableNumber Int      @unique
+  zone        String   // teaching-zone or customer-zone
+  capacity    Int      @default(4)
+  status      String   @default("available")
+  bookings    Booking[]
+}
+
+model Booking {
+  id          Int      @id @default(autoincrement())
+  tableId     Int
+  table       Table    @relation(fields: [tableId], references: [id])
+  memberId    Int?
+  member      Member?  @relation(fields: [memberId], references: [id])
+  customerName String
+  phone       String
+  email       String?
+  bookingType BookingType
+  startTime   DateTime
+  duration    Int
+  people      Int
+  status      BookingStatus @default(PENDING)
+  amount      Int      @default(0)
+  createdAt   DateTime @default(now())
+}
+
+enum BookingType {
+  WALK_IN
+  MEMBER
+  TEACHER
+}
+
+enum BookingStatus {
+  PENDING
+  CONFIRMED
+  CHECKED_IN
+  CHECKED_OUT
+  CANCELLED
+}
+
+model ClassSession {
+  id          Int      @id @default(autoincrement())
+  teacherId   Int
+  teacherName String
+  date        DateTime
+  startHour   Int
+  endHour     Int
+  tables      String   @default("[1,2]")
+  status      String   @default("pending")
+  createdAt   DateTime @default(now())
+}
+
+model Payment {
+  id          Int      @id @default(autoincrement())
+  type        String
+  amount      Int
+  reference   String
+  who         String
+  createdAt   DateTime @default(now())
+}
+
+model Config {
+  id               Int      @id @default(autoincrement())
+  courtPrice       Int      @default(20000)
+  defaultHours     Int      @default(2)
+  maxPeoplePerTable Int      @default(4)
+  openingHour      Int      @default(6)
+  closingHour      Int      @default(21)
+  classCutoffHour  Int      @default(19)
+  alertMinutes     Int      @default(30)
+}

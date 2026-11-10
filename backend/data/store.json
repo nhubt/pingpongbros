@@ -1,0 +1,150 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Quản Trị Viên (Admin)",
+      "email": "admin@pingpongbros.vn",
+      "phone": "0905123456",
+      "password": "admin123",
+      "role": "MANAGER"
+    },
+    {
+      "id": 2,
+      "name": "Như Bùi",
+      "email": "nhubuithi04@gmail.com",
+      "phone": "0365132718",
+      "password": "scrypt$e2826f4e62b1582eea8e38b0e970312a$4c9295128451a0dcf8eaef0fe4a64093f0b2af8d814b183ccb97e506125ab13cdb76d8df8c3cb60e2d39eb81d7c859f2152c9f7a492435955d84ddfa7998aaa4",
+      "role": "GUEST"
+    }
+  ],
+  "members": [],
+  "tables": [
+    {
+      "id": 1,
+      "tableNumber": 1,
+      "zone": "teaching",
+      "capacity": 4,
+      "status": "available"
+    },
+    {
+      "id": 2,
+      "tableNumber": 2,
+      "zone": "teaching",
+      "capacity": 4,
+      "status": "available"
+    },
+    {
+      "id": 3,
+      "tableNumber": 3,
+      "zone": "teaching",
+      "capacity": 4,
+      "status": "available"
+    },
+    {
+      "id": 4,
+      "tableNumber": 4,
+      "zone": "teaching",
+      "capacity": 4,
+      "status": "available"
+    },
+    {
+      "id": 5,
+      "tableNumber": 5,
+      "zone": "customer",
+      "capacity": 4,
+      "status": "available"
+    },
+    {
+      "id": 6,
+      "tableNumber": 6,
+      "zone": "customer",
+      "capacity": 4,
+      "status": "available"
+    },
+    {
+      "id": 7,
+      "tableNumber": 7,
+      "zone": "customer",
+      "capacity": 4,
+      "status": "available"
+    },
+    {
+      "id": 8,
+      "tableNumber": 8,
+      "zone": "customer",
+      "capacity": 4,
+      "status": "available"
+    },
+    {
+      "id": 9,
+      "tableNumber": 9,
+      "zone": "customer",
+      "capacity": 4,
+      "status": "available"
+    },
+    {
+      "id": 10,
+      "tableNumber": 10,
+      "zone": "customer",
+      "capacity": 4,
+      "status": "available"
+    },
+    {
+      "id": 11,
+      "tableNumber": 11,
+      "zone": "customer",
+      "capacity": 4,
+      "status": "available"
+    },
+    {
+      "id": 12,
+      "tableNumber": 12,
+      "zone": "customer",
+      "capacity": 4,
+      "status": "available"
+    },
+    {
+      "id": 13,
+      "tableNumber": 13,
+      "zone": "customer",
+      "capacity": 4,
+      "status": "available"
+    },
+    {
+      "id": 14,
+      "tableNumber": 14,
+      "zone": "customer",
+      "capacity": 4,
+      "status": "available"
+    },
+    {
+      "id": 15,
+      "tableNumber": 15,
+      "zone": "customer",
+      "capacity": 4,
+      "status": "available"
+    },
+    {
+      "id": 16,
+      "tableNumber": 16,
+      "zone": "customer",
+      "capacity": 4,
+      "status": "available"
+    }
+  ],
+  "bookings": [],
+  "classes": [],
+  "payments": [],
+  "config": {
+    "courtPrice": 20000,
+    "teacherPrice": 250000,
+    "holdLimitMinutes": 15,
+    "defaultHours": 2,
+    "maxPeoplePerTable": 4,
+    "openingHour": 6,
+    "closingHour": 21,
+    "classCutoffHour": 19,
+    "alertMinutes": 30
+  },
+  "savedAt": "2026-11-10T04:35:07.325Z"
+}
