@@ -1,7 +1,12 @@
 import axios from 'axios';
 import type { DashboardResponse, User } from '../types';
 
-const apiBaseUrl = (import.meta as any).env?.VITE_API_BASE_URL || '/api';
+
+const apiBaseUrl =
+  import.meta.env.VITE_API_URL
+    ? `${import.meta.env.VITE_API_URL}/api`
+    : '/api';
+  
 
 const api = axios.create({
   baseURL: apiBaseUrl,
