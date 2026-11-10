@@ -1,9 +1,10 @@
+
 services:
   - type: web
     name: pingpongbros
     runtime: node
     plan: free
-    region: singapore
+    region: oregon
     buildCommand: npm run build
     startCommand: npm start
     envVars:
@@ -12,7 +13,7 @@ services:
       - key: PORT
         value: 10000
       - key: JWT_SECRET
-        value: PingPongBros_Super_Secret_Key_Production_2026_@!
+        sync: false
       - key: SMTP_HOST
         value: smtp.gmail.com
       - key: SMTP_PORT
@@ -22,7 +23,6 @@ services:
       - key: SMTP_USER
         value: pingpongbros.club@gmail.com
       - key: SMTP_PASS
-        value: jsme bbvn aosx hpau
+        sync: false
       - key: SMTP_FROM
-        value: PingPongBros Club <pingpongbros.club@gmail.com>
-
+        value: PingPongBros Club &lt;pingpongbros.club@gmail.com&gt;
