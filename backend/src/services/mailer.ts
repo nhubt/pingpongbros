@@ -17,7 +17,7 @@ const emailOutbox: EmailLog[] = [];
 
 const resendApiKey = process.env.RESEND_API_KEY || '';
 const resendFrom =
-  process.env.RESEND_FROM || 'PingPongBros <onboarding@resend.dev>';
+  process.env.RESEND_FROM || 'PingPongBros <noreply@pingpongbros.aclclouds.online>;
 
 async function sendEmail(
   to: string,
